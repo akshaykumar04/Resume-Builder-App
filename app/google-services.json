@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "612688089101",
+    "firebase_url": "https://resume-builder-app-994e9.firebaseio.com",
+    "project_id": "resume-builder-app-994e9",
+    "storage_bucket": "resume-builder-app-994e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612688089101:android:db94c706b012d8230a4544",
+        "android_client_info": {
+          "package_name": "com.sstechcanada.resumeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612688089101-rdm2tmnucglqnhttv050s7bo8qv5bt7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sstechcanada.resumeapp",
+            "certificate_hash": "4e5c3db319ecd6f598902716165bbc3bcc992407"
+          }
+        },
+        {
+          "client_id": "612688089101-16k69psjju2a6nib0njnqairgm7op3p8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWq5Eq062ZDFkMp2RQkaXkqHzDFlD15Hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612688089101-16k69psjju2a6nib0njnqairgm7op3p8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

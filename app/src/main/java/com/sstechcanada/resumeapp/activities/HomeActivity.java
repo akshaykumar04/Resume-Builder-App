@@ -1,10 +1,12 @@
-package com.sstechcanada.resumeapp;
+package com.sstechcanada.resumeapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.sstechcanada.resumeapp.R;
+
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
