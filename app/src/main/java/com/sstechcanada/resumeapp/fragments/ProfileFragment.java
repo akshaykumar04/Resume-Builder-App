@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.activities.LoginActivity;
 
-import java.util.Objects;
 
 
 public class ProfileFragment extends Fragment {
@@ -28,6 +27,8 @@ public class ProfileFragment extends Fragment {
     private ImageView profilePic;
     TextView name, email;
     private FirebaseAuth mAuth;
+    private String logoutKey = null;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_profile, viewGroup, false);
@@ -41,14 +42,16 @@ public class ProfileFragment extends Fragment {
 
 
         CardView Logout = view.findViewById(R.id.logout_button);
+
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signOut();
                 Intent logout = new Intent(getActivity(), LoginActivity.class);
+                logout.putExtra("key", logoutKey);
                 startActivity(logout);
             }
         });
+
 
         return view;
     }
