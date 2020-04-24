@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.activities.LoginActivity;
-
+import com.sstechcanada.resumeapp.activities.TestActivity;
 
 
 public class ProfileFragment extends Fragment {
@@ -49,6 +49,14 @@ public class ProfileFragment extends Fragment {
                 Intent logout = new Intent(getActivity(), LoginActivity.class);
                 logout.putExtra("key", logoutKey);
                 startActivity(logout);
+            }
+        });
+
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent test = new Intent(getActivity(), TestActivity.class);
+                startActivity(test);
             }
         });
 

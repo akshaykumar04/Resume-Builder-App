@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressDialog pDialog;
     private GoogleSignInClient mGoogleSignInClient;
+    private TextView signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,15 @@ public class LoginActivity extends AppCompatActivity {
                 signOut();
             }
         }
+
+        //signup page intent
+        signup = findViewById(R.id.signupText);
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            }
+        });
 
         checkUserStatus();
     }
@@ -203,5 +213,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+
 
 }
