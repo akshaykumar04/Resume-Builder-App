@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
                                         startActivity(intent);
                                         finishAffinity();
                                     } else {
-                                        resendEmail();
+                                        startActivity(new Intent(LoginActivity.this, VerifyUser.class));
                                     }
                                 }
                             }
@@ -225,27 +225,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
-
-        TextView displayName = findViewById(R.id.displayName);
-        ImageView profileImage = findViewById(R.id.profilePic);
-        if (user != null) {
-            displayName.setText(user.getDisplayName());
-            displayName.setVisibility(View.VISIBLE);
-            // Loading profile image
-            Uri profilePicUrl = user.getPhotoUrl();
-            if (profilePicUrl != null) {
-                Glide.with(this).load(profilePicUrl)
-                        .into(profileImage);
-            }
-            profileImage.setVisibility(View.VISIBLE);
-            findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            findViewById(R.id.sign_out_button).setVisibility(View.VISIBLE);
-        } else {
-            displayName.setVisibility(View.GONE);
-            profileImage.setVisibility(View.GONE);
-            findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-            findViewById(R.id.sign_out_button).setVisibility(View.GONE);
-        }
     }
 
     private void hideProgressDialog() {
@@ -268,33 +247,13 @@ public class LoginActivity extends AppCompatActivity {
     private void checkUserStatus() {
         FirebaseUser User = mAuth.getCurrentUser();
         if (User != null) {
-            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            Intent i = new Intent(LoginActivity.this, VerifyUser.class);
             startActivity(i);
             finish();
         }
 
     }
 
-
-    //resend verification email
-    @SuppressLint("CheckResult")
-    public void resendEmail() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            user.sendEmailVerification()
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(this, "Please verify your email address",
-                                    Toast.LENGTH_LONG).show();
-
-                        } else {
-                            Toast.makeText(this, "Error occurred while sending you verification email",
-                                    Toast.LENGTH_LONG).show();
-
-                        }
-                    });
-        }
-    }
 
     //reset password
     public void forgetPass() {

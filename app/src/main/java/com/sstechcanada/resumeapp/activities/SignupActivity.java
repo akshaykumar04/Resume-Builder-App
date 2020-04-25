@@ -135,11 +135,15 @@ public class SignupActivity extends AppCompatActivity {
                                     .addOnCompleteListener(task1 -> {
                                         if (task1.isSuccessful()) {
                                             Log.d(TAG, "Verification email sent.");
+                                            Toast.makeText(this, "Verification Email sent successful",
+                                                    Toast.LENGTH_LONG).show();
                                         }
                                     });
                         }
 
-                        Intent verify = new Intent(SignupActivity.this, MainActivity.class);
+
+
+                        Intent verify = new Intent(SignupActivity.this, VerifyUser.class);
                         startActivity(verify);
                         finishAffinity();
 
