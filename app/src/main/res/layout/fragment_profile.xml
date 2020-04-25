@@ -12,8 +12,9 @@
         android:layout_height="125dp"
         android:layout_marginTop="100dp"
         android:padding="2dp"
+        android:elevation="4dp"
         android:layout_gravity="center_horizontal"
-        app:cardCornerRadius="50dp">
+        app:cardCornerRadius="100dp">
 
 
         <ImageView

@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextName"
         android:layout_width="910px"
         android:layout_height="72dp"
         android:layout_marginStart="8dp"
@@ -57,7 +57,7 @@
         android:fontFamily="@font/montserrat_semibold"
         android:textSize="40px"
         android:paddingLeft="60dp"
-        android:hint="Username"
+        android:hint="Full Name"
         android:textColor="@color/colorText"
         android:background="@drawable/bg_txt_username"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextEmail"
         android:layout_width="910px"
         android:layout_height="72dp"
         android:layout_marginStart="8dp"
@@ -73,13 +73,13 @@
         android:fontFamily="@font/montserrat_semibold"
         android:textSize="40px"
         android:paddingLeft="60dp"
-        android:hint="Password"
+        android:hint="Email"
         android:textColor="@color/colorText"
-        android:inputType="textPassword"
+        android:inputType="textWebEmailAddress"
         android:background="@drawable/bg_txt_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
 
     <EditText
@@ -98,7 +98,7 @@
         android:textSize="40px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
 
     <EditText
@@ -110,17 +110,17 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/bg_txt_password"
         android:fontFamily="@font/montserrat_semibold"
-        android:hint="Password"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
         android:paddingLeft="60dp"
         android:textColor="@color/colorText"
         android:textSize="40px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvForgetPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pass2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSignUp"
         android:layout_width="86dp"
         android:layout_height="86dp"
         android:layout_marginStart="8dp"
@@ -145,7 +145,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tvForgetPass" />
 
     <TextView
         android:id="@+id/textView4"
@@ -156,8 +156,8 @@
         android:text="Sign Up"
         android:textSize="48px"
         android:textColor="@color/colorText"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/tvForgetPass" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
@@ -170,7 +170,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -186,5 +186,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.434"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
