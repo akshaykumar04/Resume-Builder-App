@@ -11,10 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SignupActivity"></activity>
+        <activity android:name=".activities.JobSearchActivity"></activity>
+        <activity android:name=".activities.JobSearchResultActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".activities.SignupActivity" />
         <activity android:name=".activities.TestActivity" />
-        <activity android:name=".activities.VerifyUser"/>
-        <activity android:name=".activities.SplashActivity"
+        <activity android:name=".activities.VerifyUser" />
+        <activity
+            android:name=".activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
