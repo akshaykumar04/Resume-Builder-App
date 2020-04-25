@@ -8,4 +8,6 @@
     <string name="input_error_password">Password cannot be blank.</string>
     <string name="input_error_password_length">The password cannot be less than 6 characters</string>
     <string name="input_error_password_match">Passwords do not match!</string>
+    <string name="input_error_email">Email cannot be left blank</string>
+    <string name="input_error_forget_pass_email_empty">Enter your email first</string>
 </resources>

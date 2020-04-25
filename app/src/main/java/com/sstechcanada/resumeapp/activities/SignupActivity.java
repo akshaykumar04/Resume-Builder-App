@@ -75,6 +75,11 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
+        if (email.isEmpty()){
+            et_email.setError(getString(R.string.input_error_email));
+            et_email.requestFocus();
+        }
+
 
         if (password.isEmpty() || password2.isEmpty() ) {
             et_pass.setError(getString(R.string.input_error_password));
