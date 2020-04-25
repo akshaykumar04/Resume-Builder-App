@@ -10,10 +10,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.sstechcanada.resumeapp.R;
 
 
@@ -113,6 +117,19 @@ public class SignupActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
 
                         FirebaseUser userReg = FirebaseAuth.getInstance().getCurrentUser();
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(name).build();
+
+                        userReg.updateProfile(profileUpdates)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Log.d(TAG, "User profile updated.");
+                                        }
+                                    }
+                                });
+
                         if (userReg != null) {
                             userReg.sendEmailVerification()            //send verification email
                                     .addOnCompleteListener(task1 -> {

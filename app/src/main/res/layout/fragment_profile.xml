@@ -19,7 +19,7 @@
 
         <ImageView
             android:id="@+id/profilePic"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/avatar"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
