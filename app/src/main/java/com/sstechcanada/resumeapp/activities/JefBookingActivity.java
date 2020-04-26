@@ -12,11 +12,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.sstechcanada.resumeapp.R;
+import com.sstechcanada.resumeapp.fragments.jef.BookFragment;
+import com.sstechcanada.resumeapp.fragments.jef.BookingsFragment;
 import com.sstechcanada.resumeapp.fragments.jobs.GoogleJobs;
 import com.sstechcanada.resumeapp.fragments.jobs.Indeed;
 import com.sstechcanada.resumeapp.fragments.jobs.LinkedIn;
 
-public class JobSearchResultActivity extends AppCompatActivity {
+public class JefBookingActivity extends AppCompatActivity {
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -29,7 +31,7 @@ public class JobSearchResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jobs_search_results);
+        setContentView(R.layout.activity_jef_bookings);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -63,17 +65,12 @@ public class JobSearchResultActivity extends AppCompatActivity {
             switch (position) {
 
                 case 0:
-                    GoogleJobs tab1 = new GoogleJobs();
+                    BookFragment tab1 = new BookFragment();
                     return tab1;
 
                 case 1:
-                    Indeed tab2 = new Indeed();
+                    BookingsFragment tab2 = new BookingsFragment();
                     return tab2;
-
-                case 2:
-                    LinkedIn tab3 = new LinkedIn();
-                    return tab3;
-
 
 
                 default:
@@ -84,20 +81,18 @@ public class JobSearchResultActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "GoogleJobs";
+                    return "Book";
 
                 case 1:
-                    return "Indeed";
+                    return "Bookings";
 
-                case 2:
-                    return "LinkedIn";
 
                 default:
                     return null;

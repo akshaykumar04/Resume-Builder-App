@@ -14,6 +14,8 @@
         <activity android:name=".activities.JobSearchActivity"></activity>
         <activity android:name=".activities.JobSearchResultActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".activities.JefBookingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".activities.SignupActivity" />
         <activity android:name=".activities.TestActivity" />
         <activity android:name=".activities.VerifyUser" />
