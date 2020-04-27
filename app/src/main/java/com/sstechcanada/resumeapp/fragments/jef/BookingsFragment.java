@@ -18,7 +18,6 @@ public class BookingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.jef_bookings, container, false);
 
-
         return rootView;
     }
 }
