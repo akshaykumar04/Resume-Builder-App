@@ -27,6 +27,7 @@ import com.sstechcanada.resumeapp.models.Order;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 
 public class BookFragment extends Fragment {
@@ -35,7 +36,7 @@ public class BookFragment extends Fragment {
     Button book;
     ProgressBar progressBar;
     private FirebaseAuth mAuth;
-    private String name, email, date, timestamp;
+    private String name, email, date, timestamp, orderID;
 
     private int mYear, mMonth, mDay, mHour, mMinute;
 
@@ -73,7 +74,6 @@ public class BookFragment extends Fragment {
         book.setOnClickListener(view -> {
             progressBar.setVisibility(View.VISIBLE);
             date = btnDatePicker.getText().toString();
-            Toast.makeText(getActivity(), timestamp, Toast.LENGTH_SHORT).show();
             saveOrder();
         });
 
@@ -106,21 +106,31 @@ public class BookFragment extends Fragment {
 
 
         if (email.isEmpty()) {
-            useremail.setError(getString(R.string.input_error_password));
+            useremail.setError(getString(R.string.input_error_email));
             useremail.requestFocus();
             return;
         }
 
+        if (date.isEmpty()){
+            Toast.makeText(getActivity(), getString(R.string.input_error_date), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //random order id
+        Random random = new Random();
+        int randomNumber = random.nextInt(1000 - 200) + 200;
+        orderID = "JEF-"+ (String.valueOf(randomNumber)) + "-" + date;
 
         Order order = new Order(
                 name,
                 email,
                 date,
-                timestamp
+                timestamp,
+                orderID
         );
 
         FirebaseDatabase.getInstance().getReference("Orders")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(orderID)
                 .setValue(order).addOnCompleteListener(task12 -> {
             progressBar.setVisibility(View.GONE);
             if (task12.isSuccessful()) {
