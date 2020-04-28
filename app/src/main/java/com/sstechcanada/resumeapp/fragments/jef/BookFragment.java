@@ -128,6 +128,10 @@ public class BookFragment extends Fragment {
                 orderID
         );
 
+        FirebaseDatabase.getInstance().getReference("AdminOrders")
+                .child(orderID)
+                .setValue(order);
+
         FirebaseDatabase.getInstance().getReference("Orders")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(orderID)
                 .setValue(order).addOnCompleteListener(task12 -> {
@@ -137,6 +141,8 @@ public class BookFragment extends Fragment {
             }
 
         });
+
+
 
 
     }

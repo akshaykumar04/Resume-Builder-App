@@ -45,7 +45,7 @@ public class OrderListAdapter extends ArrayAdapter<Order> {
         Order order = orders.get(position);
         name.setText(order.getName());
         email.setText(order.getEmail());
-        orderId.setText(order.getOrderID());
+        orderId.setText("Order ID-"+order.getOrderID());
         timestamp.setText(order.getDate());
 
 
