@@ -72,7 +72,6 @@ public class BookFragment extends Fragment {
 
 //      btnTimePicker.setOnClickListener(this);
         book.setOnClickListener(view -> {
-            progressBar.setVisibility(View.VISIBLE);
             date = btnDatePicker.getText().toString();
             saveOrder();
         });
@@ -143,9 +142,6 @@ public class BookFragment extends Fragment {
     }
 
 }
-
-
-
 
 //
 //        if (v == btnTimePicker) {
