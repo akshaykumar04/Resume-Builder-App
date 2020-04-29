@@ -28,9 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.HomeActivity" />
         <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activities.EditActivity"></activity>
     </application>
 
 </manifest>

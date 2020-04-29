@@ -1,4 +1,4 @@
-package com.sstechcanada.resumeapp.fragments.jef;
+package com.sstechcanada.resumeapp.adapters;
 
 import android.app.Activity;
 import android.content.Context;

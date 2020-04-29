@@ -4,7 +4,6 @@ package com.sstechcanada.resumeapp.activities;
  * Created by Akshay Kumar on 26/04/2020.
  */
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -104,7 +103,7 @@ public class VerifyUser extends AppCompatActivity {
     private void email_verified() {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        Intent intent = new Intent(VerifyUser.this, MainActivity.class);
+        Intent intent = new Intent(VerifyUser.this, HomeActivity.class);
         startActivity(intent);
         finish();
     }
