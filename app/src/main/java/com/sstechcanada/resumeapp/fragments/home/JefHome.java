@@ -21,7 +21,7 @@ public class JefHome extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.child_fragment_resume_home, container, false);
+        View rootView = inflater.inflate(R.layout.child_fragment_jef_home, container, false);
 
 
         return rootView;
