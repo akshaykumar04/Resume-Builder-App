@@ -5,6 +5,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -12,7 +13,9 @@ import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.fragments.HomeFragment;
 import com.sstechcanada.resumeapp.fragments.ProfileFragment;
 
+
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +23,13 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.bottom_nav);
         loadFragment(new HomeFragment());
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(this);
+
+
     }
 
     private boolean loadFragment(Fragment fragment) {

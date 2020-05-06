@@ -26,7 +26,7 @@ import com.sstechcanada.resumeapp.helper.ResumeFragment;
 import com.sstechcanada.resumeapp.models.Resume;
 
 
-public class MainActivity extends AppCompatActivity {
+public class ResumeBuilderActivity extends AppCompatActivity {
     private Resume resume;
     private String currentTitle;
     private String STATE_CURRENT_TITLE = "current title";

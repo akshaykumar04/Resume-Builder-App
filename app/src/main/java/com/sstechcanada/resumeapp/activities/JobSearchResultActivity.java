@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.eftimoff.viewpagertransformers.RotateUpTransformer;
 import com.google.android.material.tabs.TabLayout;
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.fragments.jobs.GoogleJobs;
@@ -37,7 +38,7 @@ public class JobSearchResultActivity extends AppCompatActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
