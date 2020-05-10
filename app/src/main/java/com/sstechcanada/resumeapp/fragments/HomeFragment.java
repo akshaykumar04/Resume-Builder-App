@@ -16,7 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.sstechcanada.resumeapp.R;
 
 import com.sstechcanada.resumeapp.fragments.home.JefHome;
-import com.sstechcanada.resumeapp.fragments.home.JobSearch;
+import com.sstechcanada.resumeapp.fragments.home.JobSearchHome;
 import com.sstechcanada.resumeapp.fragments.home.ResumeHome;
 
 
@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment {
                     return tab2;
 
                 case 2:
-                    JobSearch tab3 = new JobSearch();
+                    JobSearchHome tab3 = new JobSearchHome();
                     return tab3;
 
 

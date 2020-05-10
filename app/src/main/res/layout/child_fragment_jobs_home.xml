@@ -43,7 +43,7 @@
                 app:srcCompat="@drawable/jobs" />
 
             <EditText
-                android:id="@+id/editTextName"
+                android:id="@+id/etJob"
                 android:layout_width="910px"
                 android:layout_height="72dp"
                 android:layout_marginStart="8dp"
