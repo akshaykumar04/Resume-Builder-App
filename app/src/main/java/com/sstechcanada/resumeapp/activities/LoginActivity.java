@@ -79,6 +79,9 @@ public class LoginActivity extends AppCompatActivity {
             if (data == null) {
                 signOut();
             }
+            if (data.equals("Google")){
+                signIn();
+            }
         }
 
         //signup page intent
@@ -88,7 +91,6 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(view -> loginUser());
 
         resetPass.setOnClickListener(view -> forgetPass());
-
         checkUserStatus();
     }
 
