@@ -11,7 +11,6 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -27,7 +26,7 @@ public class Indeed extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.job_search_webview, container, false);
+        View rootView = inflater.inflate(R.layout.job_search_indeed_webview, container, false);
 
         Bundle bundle = getActivity().getIntent().getExtras();
         final String jobquery = bundle.getString("keyword");

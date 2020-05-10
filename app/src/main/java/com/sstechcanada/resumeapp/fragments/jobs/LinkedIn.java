@@ -25,7 +25,7 @@ public class LinkedIn extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.job_search_webview, container, false);
+        View rootView = inflater.inflate(R.layout.job_search_linkedin_webview, container, false);
 
         Bundle bundle = getActivity().getIntent().getExtras();
         final String jobquery = bundle.getString("keyword");
