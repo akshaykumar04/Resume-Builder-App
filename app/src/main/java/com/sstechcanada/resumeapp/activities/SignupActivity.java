@@ -30,7 +30,6 @@ public class SignupActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     private String TAG = "Signup";
-    private SignInButton gSignupButton;
 
 
     @Override
@@ -53,10 +52,9 @@ public class SignupActivity extends AppCompatActivity {
         et_pass = findViewById(R.id.pass);
         et_pass2 = findViewById(R.id.pass2);
         progressBar = findViewById(R.id.progressBar);
-        gSignupButton = findViewById(R.id.sign_in_button);
 
         signup.setOnClickListener(view -> registerUser());
-        gSignupButton.setOnClickListener(view -> googleSignin());
+
 
     }
 
@@ -147,13 +145,6 @@ public class SignupActivity extends AppCompatActivity {
                 });
     }
 
-    private void googleSignin() {
-        String key = "Google";
-        Intent glogin = new Intent(SignupActivity.this, LoginActivity.class);
-        glogin.putExtra("key", key);
-        startActivity(glogin);
-
-    }
 
 
 }

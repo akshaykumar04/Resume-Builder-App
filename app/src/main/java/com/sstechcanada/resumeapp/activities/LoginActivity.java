@@ -79,10 +79,9 @@ public class LoginActivity extends AppCompatActivity {
             if (data == null) {
                 signOut();
             }
-            if (data.equals("Google")){
-                signIn();
-            }
         }
+
+
 
         //signup page intent
         signup = findViewById(R.id.signupText);
