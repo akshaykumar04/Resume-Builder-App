@@ -1,5 +1,6 @@
 package com.sstechcanada.resumeapp.fragments;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -20,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.activities.LoginActivity;
 import com.sstechcanada.resumeapp.activities.TestActivity;
+
+import java.util.Objects;
 
 
 public class ProfileFragment extends Fragment {
@@ -46,9 +50,7 @@ public class ProfileFragment extends Fragment {
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent logout = new Intent(getActivity(), LoginActivity.class);
-                logout.putExtra("key", logoutKey);
-                startActivity(logout);
+               logoutDiaglog();
             }
         });
 
@@ -76,6 +78,22 @@ public class ProfileFragment extends Fragment {
                         .into(profilePic);
             }
         }
+
+    }
+
+    private void logoutDiaglog(){
+        new AlertDialog.Builder(Objects.requireNonNull(getActivity()))
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to logout?")
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                    Intent logout = new Intent(getActivity(), LoginActivity.class);
+                    logout.putExtra("key", logoutKey);
+                    startActivity(logout);
+                })
+                .setNegativeButton(android.R.string.no, (dialogInterface, i) -> {
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
 
     }
 }
