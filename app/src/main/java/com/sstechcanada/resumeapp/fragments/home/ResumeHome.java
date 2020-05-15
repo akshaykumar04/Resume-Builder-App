@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.activities.JefBookingActivity;
+import com.sstechcanada.resumeapp.activities.ResumeBackend;
 import com.sstechcanada.resumeapp.activities.ResumeBuilderActivity;
 
 
@@ -27,7 +28,8 @@ public class ResumeHome extends Fragment {
         View rootView = inflater.inflate(R.layout.child_fragment_resume_home, container, false);
         Button buildResume = rootView.findViewById(R.id.button);
         buildResume.setOnClickListener(view -> {
-            startActivity(new Intent(getActivity(), ResumeBuilderActivity.class));
+            //startActivity(new Intent(getActivity(), ResumeBuilderActivity.class));
+            startActivity(new Intent(getActivity(), ResumeBackend.class));
         });
 
         return rootView;

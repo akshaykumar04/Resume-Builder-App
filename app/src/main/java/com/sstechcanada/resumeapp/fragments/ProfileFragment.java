@@ -1,16 +1,13 @@
 package com.sstechcanada.resumeapp.fragments;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
@@ -28,8 +25,8 @@ import java.util.Objects;
 
 public class ProfileFragment extends Fragment {
 
-    private ImageView profilePic;
     TextView name, email;
+    private ImageView profilePic;
     private FirebaseAuth mAuth;
     private String logoutKey = null;
 
@@ -44,13 +41,12 @@ public class ProfileFragment extends Fragment {
         updateProfile(currentUser);
 
 
-
         CardView Logout = view.findViewById(R.id.logout_button);
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               logoutDiaglog();
+                logoutDialog();
             }
         });
 
@@ -81,9 +77,9 @@ public class ProfileFragment extends Fragment {
 
     }
 
-    private void logoutDiaglog(){
+    private void logoutDialog() {
         new AlertDialog.Builder(Objects.requireNonNull(getActivity()))
-                .setTitle("Logout")
+                .setTitle("Logout?")
                 .setMessage("Are you sure you want to logout?")
                 .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                     Intent logout = new Intent(getActivity(), LoginActivity.class);
@@ -92,7 +88,7 @@ public class ProfileFragment extends Fragment {
                 })
                 .setNegativeButton(android.R.string.no, (dialogInterface, i) -> {
                 })
-                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setIcon(R.drawable.log_out)
                 .show();
 
     }

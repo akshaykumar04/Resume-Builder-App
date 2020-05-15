@@ -11,12 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.JobSearchResultActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".activities.JefBookingActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".activities.SignupActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activities.ResumeBackend"></activity>
+        <activity
+            android:name=".activities.JobSearchResultActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activities.JefBookingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activities.SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.TestActivity" />
         <activity android:name=".activities.VerifyUser" />
         <activity
@@ -28,13 +32,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activities.ResumeBuilderActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".activities.EditActivity"></activity>
+        <activity
+            android:name=".activities.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ResumeBuilderActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.EditActivity" />
     </application>
 
 </manifest>
