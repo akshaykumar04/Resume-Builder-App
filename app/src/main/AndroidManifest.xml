@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sstechcanada.resumeapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +14,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.ResumeBackend"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".activities.JobSearchResultActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
