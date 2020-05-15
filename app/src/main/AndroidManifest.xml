@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ResumeBackend"
-            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".activities.ResumeBackend"
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activities.JobSearchResultActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
