@@ -91,7 +91,9 @@ public class BookFragment extends Fragment {
 //      btnTimePicker.setOnClickListener(this);
         book.setOnClickListener(view -> {
             date = btnDatePicker.getText().toString();
+            mInterstitialAd.show();
             saveOrder();
+
         });
 
         //get current timestamp

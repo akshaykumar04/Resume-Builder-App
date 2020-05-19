@@ -11,6 +11,10 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.activities.JobSearchResultActivity;
 
@@ -18,6 +22,7 @@ import com.sstechcanada.resumeapp.activities.JobSearchResultActivity;
 public class JobSearchHome extends Fragment {
     private EditText jobsEditText;
     private Button searchJob;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,6 +33,21 @@ public class JobSearchHome extends Fragment {
 
         searchJob.setOnClickListener(view -> {
             showJobs();
+        });
+
+        MobileAds.initialize(getActivity(), initializationStatus -> {
+        });
+
+        mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitial_ad_unit_test_id));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mInterstitialAd.loadAd(adRequest);
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+            }
         });
 
         return rootView;
@@ -41,6 +61,7 @@ public class JobSearchHome extends Fragment {
             startActivity(jobResults);
         } else {
             Toast.makeText(getContext(), "Please enter a job keyword to continue", Toast.LENGTH_LONG).show();
+            mInterstitialAd.show();
         }
     }
 }

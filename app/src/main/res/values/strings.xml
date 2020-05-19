@@ -52,4 +52,6 @@
     <string name="symbol_separator" translatable="false">ㅡ</string>
     <string name="education">Education</string>
     <string name="interstitial_ad_unit_test_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ad_id">ca-app-pub-5204052011283006/3996837875</string>
+    <string name="test_id">ca-app-pub-3940256099942544/1033173712</string>
 </resources>

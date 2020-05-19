@@ -52,6 +52,8 @@
                 android:fontFamily="@font/montserrat_semibold"
                 android:hint="Enter Job Title..."
                 android:paddingLeft="60dp"
+                android:inputType="text"
+                android:maxLines="1"
                 android:textColor="@color/colorText"
                 android:textSize="40px"
                 app:layout_constraintBottom_toTopOf="@+id/buttonSignUp"

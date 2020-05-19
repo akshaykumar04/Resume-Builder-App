@@ -14,6 +14,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.fragments.jobs.GoogleJobs;
 
@@ -30,6 +34,21 @@ public class ResumeBackend extends AppCompatActivity {
         setContentView(R.layout.activity_resume_backend);
         backend = findViewById(R.id.webViewBackend);
         progressBar = findViewById(R.id.pbWebview);
+
+        MobileAds.initialize(this, initializationStatus -> {
+        });
+
+        InterstitialAd mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitial_ad_unit_test_id));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mInterstitialAd.loadAd(adRequest);
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+            }
+        });
 
         String newUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
        // backend.setWebChromeClient(new WebChromeClient());
