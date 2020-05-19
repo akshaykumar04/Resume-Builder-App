@@ -18,6 +18,10 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -49,6 +53,20 @@ public class BookFragment extends Fragment {
         useremail = rootView.findViewById(R.id.editTextEmail);
         book = rootView.findViewById(R.id.jefBook);
         progressBar = rootView.findViewById(R.id.JefprogressBar);
+        MobileAds.initialize(getActivity(), initializationStatus -> {
+        });
+
+        InterstitialAd mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitial_ad_unit_test_id));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mInterstitialAd.loadAd(adRequest);
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                mInterstitialAd.show();
+            }
+        });
 
 
         mAuth = FirebaseAuth.getInstance();

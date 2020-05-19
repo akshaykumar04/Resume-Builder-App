@@ -46,6 +46,11 @@
             android:name=".activities.ResumeBuilderActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.EditActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5204052011283006~4815095525"/>
+
     </application>
 
 </manifest>

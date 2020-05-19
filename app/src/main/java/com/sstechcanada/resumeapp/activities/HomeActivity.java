@@ -2,12 +2,18 @@ package com.sstechcanada.resumeapp.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.fragments.HomeFragment;
@@ -28,6 +34,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(this);
+        MobileAds.initialize(this, initializationStatus -> {
+        });
 
 
     }
@@ -61,5 +69,17 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         return loadFragment(fragment);
     }
 
+    @Override
+    protected void onResume() {
+        MobileAds.initialize(this, initializationStatus -> {
+        });
+        super.onResume();
+    }
 
+    @Override
+    protected void onResumeFragments() {
+        MobileAds.initialize(this, initializationStatus -> {
+        });
+        super.onResumeFragments();
+    }
 }
