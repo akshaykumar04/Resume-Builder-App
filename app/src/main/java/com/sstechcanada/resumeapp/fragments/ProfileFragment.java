@@ -78,13 +78,14 @@ public class ProfileFragment extends Fragment {
     }
 
     private void logoutDialog() {
-        new AlertDialog.Builder(Objects.requireNonNull(getActivity()))
+        new AlertDialog.Builder(getActivity())
                 .setTitle("Logout?")
                 .setMessage("Are you sure you want to logout?")
                 .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                     Intent logout = new Intent(getActivity(), LoginActivity.class);
                     logout.putExtra("key", logoutKey);
                     startActivity(logout);
+                    getActivity().finish();
                 })
                 .setNegativeButton(android.R.string.no, (dialogInterface, i) -> {
                 })
