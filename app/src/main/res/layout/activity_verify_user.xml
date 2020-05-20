@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg_gradient"
     android:padding="20dp"
     android:weightSum="4">
 
@@ -18,9 +19,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:text="Almost Done!"
+            android:fontFamily="@font/montserrat_semibold"
             android:textColor="@color/Buttons"
             android:textSize="34sp"
             android:textStyle="bold" />
@@ -49,9 +51,10 @@
             android:id="@+id/VerificationText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/Buttons"
-            android:textSize="18sp" />
+            android:textStyle="bold"
+            android:textSize="@dimen/_12sdp" />
 
 
 
@@ -86,6 +89,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:text="Refresh"
+                android:fontFamily="@font/montserrat_semibold"
                 android:textColor="@color/Buttons"
                 android:textSize="14sp" />
 
@@ -111,6 +115,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:text="Resend Email"
+                android:fontFamily="@font/montserrat_semibold"
                 android:textColor="@color/Buttons"
                 android:textSize="14sp" />
 
@@ -139,6 +144,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:text="Log Out"
+                android:fontFamily="@font/montserrat_semibold"
                 android:textColor="@color/Buttons"
                 android:textSize="14sp" />
 

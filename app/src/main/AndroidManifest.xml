@@ -19,18 +19,19 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".activities.JobSearchResultActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.JefBookingActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.SignupActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.TestActivity" />
-        <activity android:name=".activities.VerifyUser" />
+        <activity android:name=".activities.VerifyUser"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activities.SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

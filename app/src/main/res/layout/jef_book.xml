@@ -136,15 +136,17 @@
         android:id="@+id/jefBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/colorAccent"
+        android:background="#9AD44A"
         android:fontFamily="@font/montserrat_semibold"
         android:padding="@dimen/_10sdp"
         android:text="Book Now"
         android:textSize="@dimen/_12sdp"
         app:layout_constraintBottom_toTopOf="@+id/signinText"
         app:layout_constraintEnd_toEndOf="@+id/JefprogressBar"
-        app:layout_constraintStart_toStartOf="@+id/JefprogressBar">
+        app:layout_constraintStart_toStartOf="@+id/JefprogressBar"
+        app:layout_constraintTop_toBottomOf="@+id/JefprogressBar">
 
     </Button>
 
