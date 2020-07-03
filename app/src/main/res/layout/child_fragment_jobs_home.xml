@@ -32,26 +32,29 @@
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_250sdp"
-                android:layout_marginTop="40dp"
+                android:layout_height="@dimen/_220sdp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/etJob"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8"
-                app:srcCompat="@drawable/search" />
+                app:srcCompat="@drawable/search_jobs" />
 
             <EditText
                 android:id="@+id/etJob"
                 android:layout_width="910px"
                 android:layout_height="72dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/bg_txt_username"
                 android:fontFamily="@font/montserrat_semibold"
                 android:hint="Enter Job Title..."
-                android:paddingLeft="60dp"
                 android:inputType="text"
                 android:maxLines="1"
+                android:paddingLeft="60dp"
                 android:textColor="@color/colorText"
                 android:textSize="40px"
                 app:layout_constraintBottom_toTopOf="@+id/buttonSignUp"
@@ -66,7 +69,7 @@
                 android:layout_width="86dp"
                 android:layout_height="86dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="32dp"
                 android:background="@drawable/bg_btn_login"
@@ -74,7 +77,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/etJob" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
