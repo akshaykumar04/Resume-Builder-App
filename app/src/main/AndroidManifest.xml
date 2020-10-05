@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sstechcanada.resumeapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -8,29 +9,49 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.JobSearchActivity"></activity>
-        <activity android:name=".activities.JobSearchResultActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".activities.JefBookingActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".activities.SignupActivity" />
+        <activity
+            android:name=".activities.ResumeBackend"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".activities.JobSearchResultActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.JefBookingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.TestActivity" />
-        <activity android:name=".activities.VerifyUser" />
+        <activity android:name=".activities.VerifyUser"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activities.SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.HomeActivity" />
-        <activity android:name=".activities.LoginActivity" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ResumeBuilderActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.EditActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5204052011283006~4815095525"/>
+
     </application>
 
 </manifest>

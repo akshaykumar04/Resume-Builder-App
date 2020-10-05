@@ -1,5 +1,6 @@
 package com.sstechcanada.resumeapp.fragments.jobs;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ProgressBar;
 
 import androidx.fragment.app.Fragment;
 
@@ -20,6 +22,7 @@ public class LinkedIn extends Fragment {
 
     private WebView jobSearch;
     private String base_url = "https://in.linkedin.com/jobs/search?keywords=";
+    private ProgressBar progressBar;
 
 
     @Override
@@ -32,8 +35,9 @@ public class LinkedIn extends Fragment {
 
         String newUA = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
         jobSearch = rootView.findViewById(R.id.webview);
+        progressBar = rootView.findViewById(R.id.pbWebview);
         jobSearch.getSettings().setJavaScriptEnabled(true);
-        jobSearch.setWebChromeClient(new WebChromeClient());
+        jobSearch.setWebViewClient(new WebViewClient());
         jobSearch.getSettings().setPluginState(WebSettings.PluginState.ON);
         jobSearch.clearHistory();
         jobSearch.clearCache(true);
@@ -55,6 +59,24 @@ public class LinkedIn extends Fragment {
 
 
         return rootView;
+    }
+
+    public class WebViewClient extends android.webkit.WebViewClient {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+        }
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            progressBar.setVisibility(View.GONE);
+            jobSearch.setVisibility(View.VISIBLE);
+        }
     }
 
 }

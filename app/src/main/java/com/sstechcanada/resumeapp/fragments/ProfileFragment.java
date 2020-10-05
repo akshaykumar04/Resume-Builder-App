@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -21,11 +20,13 @@ import com.sstechcanada.resumeapp.R;
 import com.sstechcanada.resumeapp.activities.LoginActivity;
 import com.sstechcanada.resumeapp.activities.TestActivity;
 
+import java.util.Objects;
+
 
 public class ProfileFragment extends Fragment {
 
-    private ImageView profilePic;
     TextView name, email;
+    private ImageView profilePic;
     private FirebaseAuth mAuth;
     private String logoutKey = null;
 
@@ -40,15 +41,12 @@ public class ProfileFragment extends Fragment {
         updateProfile(currentUser);
 
 
-
         CardView Logout = view.findViewById(R.id.logout_button);
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent logout = new Intent(getActivity(), LoginActivity.class);
-                logout.putExtra("key", logoutKey);
-                startActivity(logout);
+                logoutDialog();
             }
         });
 
@@ -76,6 +74,23 @@ public class ProfileFragment extends Fragment {
                         .into(profilePic);
             }
         }
+
+    }
+
+    private void logoutDialog() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle("Logout?")
+                .setMessage("Are you sure you want to logout?")
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                    Intent logout = new Intent(getActivity(), LoginActivity.class);
+                    logout.putExtra("key", logoutKey);
+                    startActivity(logout);
+                    getActivity().finish();
+                })
+                .setNegativeButton(android.R.string.no, (dialogInterface, i) -> {
+                })
+                .setIcon(R.drawable.log_out)
+                .show();
 
     }
 }

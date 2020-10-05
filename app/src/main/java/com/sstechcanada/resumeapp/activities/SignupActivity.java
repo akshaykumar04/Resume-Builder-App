@@ -13,13 +13,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.sstechcanada.resumeapp.R;
-
 
 
 public class SignupActivity extends AppCompatActivity {
@@ -42,12 +42,8 @@ public class SignupActivity extends AppCompatActivity {
 
         //intent to login screen
         login = findViewById(R.id.signinText);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SignupActivity.this, LoginActivity.class));
-            }
-        });
+        login.setOnClickListener(view ->
+                startActivity(new Intent(SignupActivity.this, LoginActivity.class)));
 
         signup = findViewById(R.id.buttonSignUp);
         forgetpass = findViewById(R.id.tvForgetPass);
@@ -57,12 +53,8 @@ public class SignupActivity extends AppCompatActivity {
         et_pass2 = findViewById(R.id.pass2);
         progressBar = findViewById(R.id.progressBar);
 
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                registerUser();
-            }
-        });
+        signup.setOnClickListener(view -> registerUser());
+
 
     }
 
@@ -79,13 +71,13 @@ public class SignupActivity extends AppCompatActivity {
             return;
         }
 
-        if (email.isEmpty()){
+        if (email.isEmpty()) {
             et_email.setError(getString(R.string.input_error_email));
             et_email.requestFocus();
         }
 
 
-        if (password.isEmpty() || password2.isEmpty() ) {
+        if (password.isEmpty() || password2.isEmpty()) {
             et_pass.setError(getString(R.string.input_error_password));
             et_pass2.setError(getString(R.string.input_error_password));
             et_pass.requestFocus();
@@ -142,7 +134,6 @@ public class SignupActivity extends AppCompatActivity {
                         }
 
 
-
                         Intent verify = new Intent(SignupActivity.this, VerifyUser.class);
                         startActivity(verify);
                         finishAffinity();
@@ -153,6 +144,7 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 });
     }
+
 
 
 }
